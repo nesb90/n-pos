@@ -1,0 +1,23 @@
+{
+  "name": "n-pos",
+  "version": "1.0.0",
+  "description": "Point Of Sale",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "test"
+  },
+  "keywords": [
+    "pos"
+  ],
+  "author": "nesb",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.16.3"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  }
+}

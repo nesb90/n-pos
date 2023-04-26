@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  n-pos:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - .:/n-pos
+    working_dir: /n-pos
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    entrypoint: npm
+    env_file:
+      - .env

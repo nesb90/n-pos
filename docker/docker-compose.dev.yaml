@@ -1,0 +1,3 @@
+services:
+  n-pos:
+    command: run dev
