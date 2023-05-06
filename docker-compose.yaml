@@ -13,3 +13,19 @@ services:
     entrypoint: npm
     env_file:
       - .env
+    depends_on:
+      - n-pos-db
+  n-pos-db:
+    image: postgres:14.5
+    container_name: n-pos-db
+    volumes:
+      - n-pos-db:/var/lib/postgresql/data
+    ports:
+      - 4005:${POSTGRES_PORT}
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+volumes:
+  n-pos-db:
+    external: true
