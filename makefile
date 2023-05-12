@@ -1,5 +1,6 @@
 setup:
 	docker volume create --name=n-pos-db
+	cp -n .env.example .env
 
 init-db:
 	docker-compose run --rm n-pos run init:db
