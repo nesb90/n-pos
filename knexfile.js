@@ -4,7 +4,7 @@ module.exports = {
   client: POSTGRES.CLIENT,
   connection: POSTGRES.CONFIG,
   migrations: {
-    schemaName: POSTGRES.DATABASE,
+    schemaName: POSTGRES.SCHEMA,
     tableName: 'migrations'
   }
 }

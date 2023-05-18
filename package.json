@@ -7,7 +7,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "test",
-    "init:db": "node 'src/db/scripts/create-schema-db.js'"
+    "init:db": "node 'src/db/scripts/create-schema-db.js'",
+    "db:migrate": "npx knex migrate:latest",
+    "db:migrate:revert": "npx knex migrate:rollback"
   },
   "keywords": [
     "pos"
