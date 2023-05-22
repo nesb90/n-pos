@@ -6,14 +6,13 @@ function userRoutes ({
   async function createUser (_request, _reply) {
     await userService.createUser(_request.body)
 
-    return _reply.send({
+    return {
       result: 'User Created'
-    })
+    }
   }
 
   async function getUsers (_request, _reply) {
-    const users = await userService.getUsers()
-    return _reply.send(users)
+    return await userService.getUsers()
   }
 
   async function getUserById (_request, _reply) {
@@ -21,12 +20,14 @@ function userRoutes ({
     const result = await userService.getUserById(id)
 
     if (_.isEmpty(result)) {
-      return _reply.send({
+      return {
         result: 'User does not exist.'
-      })
+      }
     }
 
-    return _reply.send(...result)
+    const [user] = result
+
+    return user
   }
 
   return {
