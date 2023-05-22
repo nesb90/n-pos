@@ -1,4 +1,5 @@
 const { Pool } = require('pg')
+const DBClient = require('./db.client')
 
 class DBPool {
   constructor(config, maxConn) {
@@ -11,7 +12,7 @@ class DBPool {
     this._pool = new Pool(poolConfig)
   }
 
-  async getClient (DBClient) {
+  async getClient () {
     const client = await this._pool.connect()
     return new DBClient(client)
   }
